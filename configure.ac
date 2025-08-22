@@ -170,12 +170,10 @@ AC_TYPE_SIGNAL
 AC_FUNC_STAT
 AC_CHECK_FUNCS([accept4 memmove select socket strerror strtoul])
 
-AC_ARG_WITH(nagios4,AC_HELP_STRING([--with-nagios4],[enabled compilation for nagios 4]), [
-    CPPFLAGS="${CFLAGS} -DNAGIOS4"
-    nagios_headers=nagios4
-    ],
-    nagios_headers=nagios)
+CPPFLAGS="${CFLAGS} -DNAGIOS4"
+nagios_headers=nagios4
 AC_SUBST(nagios_headers)
+
 
 # Compiling or executing a std::regex can fail with a stack overflow, causing
 # our Livestatus threads to die, see e.g. the related bug report
