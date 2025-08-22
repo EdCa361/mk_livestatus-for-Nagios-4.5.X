@@ -64,3 +64,4 @@ int pnpgraph_present(MonitoringCore* mc, const std::string& host,
     return ec ? 0 : 1;
 }
 #endif
+
