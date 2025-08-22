@@ -1421,7 +1421,6 @@ Optional Packages:
   --with-re2[=ARG]        use RE2 library from a standard location (ARG=yes),
                           from the specified location (ARG=<path>), or disable
                           it (ARG=no) [ARG=no]
-  --with-nagios4          enabled compilation for nagios 4
 
 Some influential environment variables:
   CC          C compiler command
@@ -8896,15 +8895,9 @@ done
 
 
 
-# Check whether --with-nagios4 was given.
-if test "${with_nagios4+set}" = set; then :
-  withval=$with_nagios4;
-    CPPFLAGS="${CFLAGS} -DNAGIOS4"
-    nagios_headers=nagios4
-
-else
-  nagios_headers=nagios
-fi
+# Always configure for Nagios 4 by default.
+CPPFLAGS="${CFLAGS} -DNAGIOS4"
+nagios_headers=nagios4
 
 
 
